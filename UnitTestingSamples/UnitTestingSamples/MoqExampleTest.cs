@@ -31,6 +31,8 @@ namespace UnitTestingSamples
 
             //Assert
             Assert.Equal(response, "Jan Kowalski 1991/05/05");
+
+            //Check if method GetUserData was called
             mockedUser.VerifyAll();
         }
 
@@ -78,6 +80,7 @@ namespace UnitTestingSamples
             userDataWorker.InsertData(mockedUser.Object, userDataList);
 
             //Assert
+            //Verify if method InsertUserData was called userDataList.Count times
             mockedUser.Verify(x => x.InsertUserData(It.IsAny<SomeUserData>()), Times.Exactly(userDataList.Count));
         }
 
