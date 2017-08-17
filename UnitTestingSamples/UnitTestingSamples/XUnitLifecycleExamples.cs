@@ -3,8 +3,14 @@ using Xunit;
 
 namespace UnitTestingSamples
 {
+    /// <summary>
+    /// https://xunit.github.io/docs/getting-started-desktop.html
+    /// </summary>
     public partial class XUnit
     {
+        /// <summary>
+        /// Sample testOutput usage
+        /// </summary>
         [Fact]
         [Trait("Category", "WriteLineTests")]
         public void ConsoleWritelineExample()
@@ -26,6 +32,9 @@ namespace UnitTestingSamples
             Assert.Equal(ford.GetName(), "Ford");
         }
 
+        /// <summary>
+        /// Sample dispose test
+        /// </summary>
         [Fact]
         [Trait("Category", "MemoryCalculatorTests")]
         public void MemoryCalculatorDisposeTest()
@@ -37,6 +46,9 @@ namespace UnitTestingSamples
             Assert.Equal(result, 3);
         }
 
+        /// <summary>
+        /// Sample IClassFixture
+        /// </summary>
         [Fact]
         [Trait("Category", "MemoryCalculatorFixtureTests")]
         public void MemoryCalculatorFixtureTest1()
@@ -48,6 +60,9 @@ namespace UnitTestingSamples
             Assert.Equal(result, 3);
         }
 
+        /// <summary>
+        /// Sample IClassFixture
+        /// </summary>
         [Fact]
         [Trait("Category", "MemoryCalculatorFixtureTests")]
         public void MemoryCalculatorFixtureTest2()
@@ -59,6 +74,9 @@ namespace UnitTestingSamples
             Assert.Equal(result, 3);
         }
 
+        /// <summary>
+        /// Sample IClassFixture
+        /// </summary>
         [Fact]
         [Trait("Category", "MemoryCalculatorFixtureTests")]
         public void MemoryCalculatorFixtureTest3()
@@ -69,5 +87,25 @@ namespace UnitTestingSamples
             //Assert
             Assert.Equal(result, 3);
         }
+
+        /// <summary>
+        /// Sample of Theory and InlineData
+        /// </summary>
+        /// <param name="value"></param>
+        [Theory]
+        [InlineData(1)]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(4)]
+        [Trait("Category", "TheoryTests")]
+        public void TheorySample(int value)
+        {
+            //Act
+            var response = calc.IsGreaterCheck(value, 0);
+
+            //Assert
+            Assert.True(response);
+        }
+
     }
 }

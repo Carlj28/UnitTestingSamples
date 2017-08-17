@@ -7,6 +7,9 @@ using Xunit;
 
 namespace UnitTestingSamples
 {
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/aspnet/core/testing/integration-testing
+    /// </summary>
     public class IntegrationTestingExample
     {
         private readonly TestServer _server;

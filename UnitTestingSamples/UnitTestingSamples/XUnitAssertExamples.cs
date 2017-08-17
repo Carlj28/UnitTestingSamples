@@ -5,6 +5,9 @@ using Xunit.Abstractions;
 
 namespace UnitTestingSamples
 {
+    /// <summary>
+    /// https://xunit.github.io/docs/getting-started-desktop.html
+    /// </summary>
     //Trait can be on class definition level so all test in this class will be in specific category 
     //[Trait("Category", "CalculatorTests")]
     public partial class XUnit : IDisposable, IClassFixture<MemoryCalculatorFixture>
@@ -35,6 +38,9 @@ namespace UnitTestingSamples
             this.testOutput.WriteLine("Hello from constructor!");
         }
 
+        /// <summary>
+        /// Sample Assert.Throws
+        /// </summary>
         [Fact]
         [Trait("Category", "CalculatorTests")]
         public void DivideByZeroThrow()
@@ -48,6 +54,9 @@ namespace UnitTestingSamples
             Assert.Throws<DivideByZeroException>(() => { result = 8 / divideBy; });
         }
 
+        /// <summary>
+        /// Sample Assert.Equal
+        /// </summary>
         [Fact]
         [Trait("Category", "CalculatorTests")]
         public void DivideInts()
@@ -59,6 +68,9 @@ namespace UnitTestingSamples
             Assert.Equal(result, 2);
         }
 
+        /// <summary>
+        /// Sample Assert.NotEqual
+        /// </summary>
         [Fact]
         [Trait("Category", "CalculatorTests")]
         public void AddDoublesNotEqual()
@@ -70,6 +82,9 @@ namespace UnitTestingSamples
             Assert.NotEqual(result, 3.3);
         }
 
+        /// <summary>
+        /// Sample Assert.Equal with precision set
+        /// </summary>
         [Fact]
         [Trait("Category", "CalculatorTests")]
         public void AddDoubles()
@@ -81,6 +96,9 @@ namespace UnitTestingSamples
             Assert.Equal(result, 3.3, 1);
         }
 
+        /// <summary>
+        /// Sample Assert.Equal
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStrings()
@@ -92,6 +110,9 @@ namespace UnitTestingSamples
             Assert.Equal(result, "Jan Kowalski");
         }
 
+        /// <summary>
+        /// Sample Assert.Contains
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStringsContains()
@@ -103,6 +124,9 @@ namespace UnitTestingSamples
             Assert.Contains("Jan", result);
         }
 
+        /// <summary>
+        /// Sample Assert.StartsWith
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStringsStartWith()
@@ -114,6 +138,9 @@ namespace UnitTestingSamples
             Assert.StartsWith("Jan", result);
         }
 
+        /// <summary>
+        /// Sample Assert.EndsWith
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStringsEndsWith()
@@ -125,6 +152,9 @@ namespace UnitTestingSamples
             Assert.EndsWith("Kowalski", result);
         }
 
+        /// <summary>
+        /// Sample Assert.Matches
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStringsMatches()
@@ -136,6 +166,9 @@ namespace UnitTestingSamples
             Assert.Matches("[A-Z]{1}[a-z]+ [A-Z]{1}[a-z]+", result);
         }
 
+        /// <summary>
+        /// Sample Assert.False
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStringsIsNotNull()
@@ -147,6 +180,9 @@ namespace UnitTestingSamples
             Assert.False(String.IsNullOrEmpty(result));
         }
 
+        /// <summary>
+        /// Sample Assert.Null
+        /// </summary>
         [Fact]
         [Trait("Category", "StringTests")]
         public void ConcatenateStringsIsNull()
@@ -158,6 +194,9 @@ namespace UnitTestingSamples
             Assert.Null(result);
         }
 
+        /// <summary>
+        /// Sample Assert.True
+        /// </summary>
         [Fact]
         [Trait("Category", "CalculatorTests")]
         public void CalculatorIsGreaterTest()
@@ -169,6 +208,9 @@ namespace UnitTestingSamples
             Assert.True(result);
         }
 
+        /// <summary>
+        /// Sample Assert.All
+        /// </summary>
         [Fact]
         [Trait("Category", "CollectionTests")]
         public void CollectionGeneratorNotNullOrEmpty()
@@ -180,6 +222,9 @@ namespace UnitTestingSamples
             Assert.All(result, name => { Assert.False(String.IsNullOrEmpty(name)); });
         }
 
+        /// <summary>
+        /// Sample Assert.Contains
+        /// </summary>
         [Fact]
         [Trait("Category", "CollectionTests")]
         public void CollectionGeneratorContains()
@@ -191,6 +236,9 @@ namespace UnitTestingSamples
             Assert.Contains("Jan Kowalski", result);
         }
 
+        /// <summary>
+        /// Sample Assert.DoesNotContain
+        /// </summary>
         [Fact]
         [Trait("Category", "CollectionTests")]
         public void CollectionGeneratorDontContains()
@@ -202,6 +250,9 @@ namespace UnitTestingSamples
             Assert.DoesNotContain("Adam Kowalski", result);
         }
 
+        /// <summary>
+        /// Sample Assert.Contains
+        /// </summary>
         [Fact]
         [Trait("Category", "CollectionTests")]
         public void CollectionGeneratorAtLeastOne()
@@ -213,6 +264,9 @@ namespace UnitTestingSamples
             Assert.Contains(result, name => name.Contains("Jan"));
         }
 
+        /// <summary>
+        /// Sample Assert.InRange
+        /// </summary>
         [Fact]
         [Trait("Category", "RandomTests")]
         public void RandomInRange()
@@ -224,6 +278,9 @@ namespace UnitTestingSamples
             Assert.InRange(result, 1, 100);
         }
 
+        /// <summary>
+        /// Sample Assert.IsType
+        /// </summary>
         [Fact]
         [Trait("Category", "TypeTests")]
         public void IsTypeFiat()
@@ -236,6 +293,9 @@ namespace UnitTestingSamples
             Assert.Equal(fiat.GetName(), "Fiat");
         }
 
+        /// <summary>
+        /// Sample Assert.IsType
+        /// </summary>
         [Fact]
         [Trait("Category", "TypeTests")]
         public void IsTypeFord()
@@ -248,6 +308,9 @@ namespace UnitTestingSamples
             Assert.Equal(ford.GetName(), "Ford");
         }
 
+        /// <summary>
+        /// Sample Assert.IsAssignableFrom
+        /// </summary>
         [Fact]
         [Trait("Category", "TypeTests")]
         public void IsAssignableType()

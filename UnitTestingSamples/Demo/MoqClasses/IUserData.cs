@@ -7,5 +7,7 @@
         string GetUserData(string param);
 
         string InsertUserData(SomeUserData param);
+
+        int UpdateAndGetNewId(SomeUserData param);
     }
 }

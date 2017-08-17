@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Demo.MoqClasses
+﻿namespace Demo.MoqClasses
 {
     public class SomeUserData
     {
+        public int Id { get; set; }
     }
 }

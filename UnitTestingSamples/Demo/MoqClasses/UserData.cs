@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Demo.MoqClasses
 {
@@ -19,6 +17,16 @@ namespace Demo.MoqClasses
             //Do something
 
             return string.Empty;
+        }
+
+        public int UpdateAndGetNewId(SomeUserData param)
+        {
+            if (param == null)
+                throw new ArgumentException();
+
+            //Do something
+
+            return param.Id;
         }
     }
 }

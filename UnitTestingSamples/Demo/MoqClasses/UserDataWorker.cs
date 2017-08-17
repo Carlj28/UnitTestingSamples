@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Demo.MoqClasses
@@ -37,6 +38,8 @@ namespace Demo.MoqClasses
 
             //
         }
+
+        public IEnumerable<int> GetIds(IEnumerable<IUserData> data, SomeUserData sd) => data.Select(userData => userData.UpdateAndGetNewId(sd)).ToList();
 
         public void InsertData(IUserData data, SomeUserData sd)
         {
